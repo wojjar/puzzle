@@ -15,7 +15,7 @@ function onReady() {
     ctx = can.getContext('2d');
     img = new Image();
     img.onload = onImage1Load;
-    img.src = "cat.jpeg";
+    img.src = "images/mount.jpeg";
 }
 
 function onImage1Load() {
