@@ -1,10 +1,11 @@
 
 body {
-    background-color: grey;
+    background-color: #4267B2;
+  overflow: hidden;
 }
 canvas {
-    width: 480px;
-    height: 480px;
+    width: 450px;
+    height: 450px;
     border: 3px solid black;
     margin: auto;
 }
@@ -15,18 +16,23 @@ canvas {
     text-align:center;
 }
 h1 {
-    font-size:70px;
-    margin:auto; 
-    text-align:center;
-    color:black;
+    font-size:50px;
+    margin: 0 auto; 
+    text-align: center;
+    color:#ffff;
     text-shadow:2px 2px rgb(144, 147, 160);
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
 }
 #content {
-    margin-top:10px;
-    height:1000px;
+    margin-top: 10px;
+    height: 1000px;
 }
 h2 {
-    font-size: 40px;
+    font-size: 30px;
+    color:#ffff;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
 }
 #original_image {
     width: 50%; 
@@ -34,11 +40,11 @@ h2 {
     float: left;
 }
 #canvas_image {
-    width:50%; 
+    width: 50%; 
     display:inline ;
 }
 img {
     border:3px solid black;
-    width: 480px;
-    height: 480px;
+    width: 450px;
+    height: 450px;
 }

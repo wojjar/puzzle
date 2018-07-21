@@ -3,7 +3,7 @@ window.onload = onReady;
 var can;
 var ctx;
 var img;
-var blockSize = 160;
+var blockSize = 150;
 var clickX;
 var clickY;
 var selected1;
@@ -15,7 +15,7 @@ function onReady() {
     ctx = can.getContext('2d');
     img = new Image();
     img.onload = onImage1Load;
-    img.src = "images/mount.jpeg";
+    img.src = "images/car.jpg";
 }
 
 function onImage1Load() {
@@ -40,7 +40,7 @@ function onCanvasClick(evt) {
     var drawHighlight = true;
     drawX *= blockSize;
     drawY *= blockSize;
-    ctx.clearRect(0, 0, 480, 480);
+    ctx.clearRect(0, 0, 450, 450);
     if (selected1 != undefined && selected2 != undefined) {
         selected1 = selected2 = undefined;
     }
