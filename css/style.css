@@ -1,7 +1,7 @@
 
 body {
     background-color: #4267B2;
-  overflow: hidden;
+    overflow: hidden;
 }
 canvas {
     width: 450px;
@@ -10,10 +10,10 @@ canvas {
     margin: auto;
 }
 #top {
-    width:1200px;
-    margin:auto;
-    margin-top:10px;
-    text-align:center;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
 }
 h1 {
     font-size:50px;

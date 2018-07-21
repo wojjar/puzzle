@@ -1,75 +1,73 @@
-window.onload = onReady;
+window.onload = onLoad;
 
 var can;
 var ctx;
 var img;
-var blockSize = 150;
+var sizeBlock = 150;
 var clickX;
 var clickY;
-var selected1;
-var selected2;
-var piecesArray = [];
+var selectOne;
+var selectTwo;
+var imgBlockArray = [];
 
-function onReady() {
+function onLoad() {
     can = document.getElementById('myCanvas');
     ctx = can.getContext('2d');
     img = new Image();
-    img.onload = onImage1Load;
+    img.onload = doimgBlock;
     img.src = "images/car.jpg";
 }
 
-function onImage1Load() {
-    var r;
+function doimgBlock() {
+    var imgBlock;
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
-            r = new Rectangle(i * blockSize, j * blockSize, i * blockSize + blockSize, j * blockSize + blockSize);
-            piecesArray.push(r);
+            imgBlock = new Rectangle(i * sizeBlock, j * sizeBlock, i * sizeBlock + sizeBlock, j * sizeBlock + sizeBlock);
+            imgBlockArray.push(imgBlock);
         }
     }
-    scrambleArray(piecesArray, 30);
+    scrambleArray(imgBlockArray, 30);
     drawImage();
 }
 
 function onCanvasClick(evt) {
     clickX = evt.offsetX;
     clickY = evt.offsetY;
-    var drawX = Math.floor(clickX / blockSize);
-    var drawY = Math.floor(clickY / blockSize);
+    var drawX = Math.floor(clickX / sizeBlock);
+    var drawY = Math.floor(clickY / sizeBlock);
     var index = drawX * 3 + drawY;
-    var targetRect = piecesArray[index];
-    var drawHighlight = true;
-    drawX *= blockSize;
-    drawY *= blockSize;
+    var targetRect = imgBlockArray[index];
+    drawX *= sizeBlock;
+    drawY *= sizeBlock;
     ctx.clearRect(0, 0, 450, 450);
-    if (selected1 != undefined && selected2 != undefined) {
-        selected1 = selected2 = undefined;
+    if (selectOne != undefined && selectTwo != undefined) {
+        selectOne = selectTwo = undefined;
     }
-
-    if (selected1 == undefined) {
-        selected1 = targetRect;
+    if (selectOne == undefined) {
+        selectOne = targetRect;
     }
     else {
-        selected2 = targetRect;
-        swapRects(selected1, selected2);
+        selectTwo = targetRect;
+        swapRects(selectOne, selectTwo);
     }
     drawImage();
 }
 
 function swapRects(r1, r2) {
-    var index1;
-    var index2;
+    var indexOne;
+    var indexTwo;
     var temp = r1;
-    index1 = piecesArray.indexOf(r1);
-    index2 = piecesArray.indexOf(r2);
-    piecesArray[index1] = r2;
-    piecesArray[index2] = temp;
+    indexOne = imgBlockArray.indexOf(r1);
+    indexTwo = imgBlockArray.indexOf(r2);
+    imgBlockArray[indexOne] = r2;
+    imgBlockArray[indexTwo] = temp;
 }
 
 function drawImage() {
     for (var k = 0; k < 3; k++) {
         for (var l = 0; l < 3; l++) {
-            r = piecesArray[k * 3 + l];
-            ctx.drawImage(img, r.left, r.top, r.width, r.height, k * blockSize, l * blockSize, blockSize, blockSize);
+            imgBlock = imgBlockArray[k * 3 + l];
+            ctx.drawImage(img, imgBlock.left, imgBlock.top, imgBlock.width, imgBlock.height, k * sizeBlock, l * sizeBlock, sizeBlock, sizeBlock);
         }
     }
 }
@@ -77,14 +75,14 @@ function drawImage() {
 function scrambleArray(ar, times) {
     var count = 0;
     var temp;
-    var index1;
-    var index2;
+    var indexOne;
+    var indexTwo;
     while (count < times) {
-        index1 = Math.floor(Math.random() * piecesArray.length);
-        index2 = Math.floor(Math.random() * piecesArray.length);
-        temp = piecesArray[index1];
-        piecesArray[index1] = piecesArray[index2];
-        piecesArray[index2] = temp;
+        indexOne = Math.floor(Math.random() * imgBlockArray.length);
+        indexTwo = Math.floor(Math.random() * imgBlockArray.length);
+        temp = imgBlockArray[indexOne];
+        imgBlockArray[indexOne] = imgBlockArray[indexTwo];
+        imgBlockArray[indexTwo] = temp;
         count++;
     }
 }
