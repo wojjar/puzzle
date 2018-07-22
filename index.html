@@ -1,25 +1,45 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUZZLE</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Puzzle game</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 </head>
 
 <body>
-    <div id="top">
-        <h1>PUZZLE GAME</h1>
-        <div id="content">
-            <h2>The pictures must be the same. Use mouse to play.</h2>
-            <div id="original_image">
-                <img src="images/car.jpg">
+    <main>
+        <section class="content">
+            <div class="container">
+                <header>
+                    <h1>PUZZLE GAME</h1>
+                    <p>The pictures must be the same. Use mouse to play.</p>
+                    <button id="btn">Refresh image</button>
+                </header>
+                <div class="row">
+                    <div class="col-sm-6 col-md-5 offset-md-1">
+                        <figure>
+                            <img src="images/car.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="col-sm-6 col-md-5">
+                        <canvas id="myCanvas" width="450" height="450"></canvas>
+                    </div>
+                </div>
             </div>
-            <div id="canvas_image">
-                <canvas id="myCanvas" width="450" height="450" onclick="onCanvasClick(event);"></canvas>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 
