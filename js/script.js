@@ -75,13 +75,11 @@ $(function () {
         drawImage();
     }
 
-    function swapRects(r1, r2) {
-        var indexOne;
-        var indexTwo;
-        var tmp = r1;
-        indexOne = imgBlockArray.indexOf(r1);
-        indexTwo = imgBlockArray.indexOf(r2);
-        imgBlockArray[indexOne] = r2;
+    function swapRects(rec1, rec2) {
+        var tmp = rec1;
+        var indexOne = imgBlockArray.indexOf(rec1);
+        var indexTwo = imgBlockArray.indexOf(rec2);
+        imgBlockArray[indexOne] = rec2;
         imgBlockArray[indexTwo] = tmp;
     }
 
