@@ -78,11 +78,11 @@ $(function () {
     function swapRects(r1, r2) {
         var indexOne;
         var indexTwo;
-        var temp = r1;
+        var tmp = r1;
         indexOne = imgBlockArray.indexOf(r1);
         indexTwo = imgBlockArray.indexOf(r2);
         imgBlockArray[indexOne] = r2;
-        imgBlockArray[indexTwo] = temp;
+        imgBlockArray[indexTwo] = tmp;
     }
 
     function gameRefresh() {
