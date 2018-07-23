@@ -40,13 +40,13 @@ $(function () {
     }
 
     function scrambleArray() {
-        imgBlockArray.sort(function(a, b){return 0.5 - Math.random()});
+        imgBlockArray.sort(function(){return 0.5 - Math.random();});
     }
 
     function drawImage() {
         for (var k = 0; k < 3; k++) {
             for (var l = 0; l < 3; l++) {
-                imgBlock = imgBlockArray[k * 3 + l];
+               var imgBlock = imgBlockArray[k * 3 + l];
                 ctx.drawImage(img, imgBlock.left, imgBlock.top, imgBlock.width, imgBlock.height, k * sizeBlock, l * sizeBlock, sizeBlock, sizeBlock);
             }
         }
@@ -62,10 +62,10 @@ $(function () {
         drawX *= sizeBlock;
         drawY *= sizeBlock;
         ctx.clearRect(0, 0, 450, 450);
-        if (selectOne != undefined && selectTwo != undefined) {
+        if (selectOne !== undefined && selectTwo !== undefined) {
             selectOne = selectTwo = undefined;
         }
-        if (selectOne == undefined) {
+        if (selectOne === undefined) {
             selectOne = targetRect;
         }
         else {
